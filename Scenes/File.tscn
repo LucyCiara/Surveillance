@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://v4me2ih06x3a"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8dgms"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fou5q"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.0562999, 0.129616, 0.440686, 1)
+
+[node name="Unsafe" type="Sprite2D" parent="ColorRect"]
+modulate = Color(0.521569, 0, 0, 1)
+position = Vector2(100, 324)
+scale = Vector2(200, 400)
+texture = SubResource("CanvasTexture_8dgms")
+
+[node name="Safe" type="Sprite2D" parent="ColorRect"]
+modulate = Color(0.133103, 0.349804, 0, 1)
+position = Vector2(1052, 324)
+scale = Vector2(200, 400)
+texture = SubResource("CanvasTexture_8dgms")
+
+[node name="File" type="Sprite2D" parent="ColorRect"]
+modulate = Color(0.356327, 0.279221, 0.140679, 1)
+position = Vector2(576, 324)
+scale = Vector2(200, 200)
+texture = SubResource("CanvasTexture_fou5q")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 89.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="LivesPanel" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Lives" type="Label" parent="MarginContainer/HBoxContainer/LivesPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "3/3"
+
+[node name="TimerPanel" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="TimerLabel" type="Label" parent="MarginContainer/HBoxContainer/TimerPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "10:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScorePanel" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Score" type="Label" parent="MarginContainer/HBoxContainer/ScorePanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 2
