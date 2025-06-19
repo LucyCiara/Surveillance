@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://db2b6b070xohx" path="res://Scripts/main.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://bktpbh2fli52s" path="res://Scripts/file.gd" id="2_idj7w"]
-[ext_resource type="Script" uid="uid://c04pu50sguyp5" path="res://Scripts/safe.gd" id="2_kln2b"]
+[ext_resource type="Script" path="res://Scripts/safe.gd" id="2_kln2b"]
 [ext_resource type="Script" uid="uid://com78ev4tjp83" path="res://Scripts/unsafe.gd" id="2_rgh2o"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8dgms"]
