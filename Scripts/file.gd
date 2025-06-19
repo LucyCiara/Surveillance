@@ -3,6 +3,8 @@ extends Sprite2D
 
 var selected: bool = false
 var originalPosition = global_position
+
+signal drop(event)
 	
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -10,6 +12,7 @@ func _input(event):
 			if get_rect().has_point(to_local(event.position)):
 				selected = true
 		elif selected:
+			drop.emit(event)
 			selected = false
 
 func _physics_process(delta: float) -> void:

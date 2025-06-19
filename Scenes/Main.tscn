@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://v4me2ih06x3a"]
+[gd_scene load_steps=7 format=3 uid="uid://v4me2ih06x3a"]
 
 [ext_resource type="Script" uid="uid://db2b6b070xohx" path="res://Scripts/main.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://bktpbh2fli52s" path="res://Scripts/file.gd" id="2_idj7w"]
+[ext_resource type="Script" uid="uid://c04pu50sguyp5" path="res://Scripts/safe.gd" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://com78ev4tjp83" path="res://Scripts/unsafe.gd" id="2_rgh2o"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8dgms"]
 
@@ -20,12 +22,14 @@ modulate = Color(0.521569, 0, 0, 1)
 position = Vector2(100, 324)
 scale = Vector2(200, 400)
 texture = SubResource("CanvasTexture_8dgms")
+script = ExtResource("2_rgh2o")
 
 [node name="Safe" type="Sprite2D" parent="Background"]
 modulate = Color(0.133103, 0.349804, 0, 1)
 position = Vector2(1052, 324)
 scale = Vector2(200, 400)
 texture = SubResource("CanvasTexture_8dgms")
+script = ExtResource("2_kln2b")
 
 [node name="File" type="Sprite2D" parent="Background"]
 modulate = Color(0.356327, 0.279221, 0.140679, 1)
@@ -85,3 +89,6 @@ horizontal_alignment = 2
 process_callback = 0
 wait_time = 600.0
 one_shot = true
+
+[connection signal="drop" from="Background/File" to="Background/Unsafe" method="_on_file_drop"]
+[connection signal="drop" from="Background/File" to="Background/Safe" method="_on_file_drop"]
