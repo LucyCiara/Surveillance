@@ -12,6 +12,6 @@ func timerLabelUpdate(time):
 func _ready():
 	$Timer.start()
 	
-func _process(_delta):
+func _process(delta):
 	var time = $Timer.time_left
 	timerLabelUpdate(time)
